@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fyaxm的博客</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Arial", "Helvetica", sans-serif;
+            background: #121212; /* 深色背景 */
+            color: #e0e0e0; /* 主文字颜色 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e; /* 滚动条轨道颜色 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #424242; /* 滚动条颜色 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #616161; /* 滚动条悬停颜色 */
+        }
+
+        /* 头部样式 */
+        header {
+            background: #262626; /* 深灰色背景 */
+            color: #ffffff; /* 白色文字 */
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px; /* 圆角 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px; /* 与主体部分的间距 */
+        }
+
+        /* 主体样式 */
+        main {
+            width: 100%;
+            max-width: 800px;
+            background: #1e1e1e; /* 深灰背景 */
+            border-radius: 12px; /* 圆角 */
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* 防止内容超出 */
+        }
+
+        .content {
+            max-height: 400px; /* 限制高度 */
+            overflow-y: auto; /* 垂直滚动 */
+            padding-right: 10px; /* 给滚动条留空间 */
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #90caf9; /* 蓝色标题点缀 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* 间距 */
+        }
+
+        .link-list a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #e0e0e0; /* 浅灰色文字 */
+            padding: 15px;
+            background: #2c2c2c; /* 按钮深灰色背景 */
+            border: 1px solid #424242; /* 按钮边框颜色 */
+            border-radius: 8px; /* 圆润按钮 */
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* 按钮轻微阴影 */
+        }
+
+        .link-list a:hover {
+            background: #424242; /* 悬停时按钮变亮 */
+            color: #90caf9; /* 悬停时文字变为蓝色 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* 悬停时阴影增强 */
+            transform: translateY(-2px); /* 悬停时稍微上移 */
+        }
+
+        /* 页脚样式 */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #757575; /* 次要文字颜色 */
+        }
+
+        footer a {
+            color: #90caf9; /* 蓝色链接 */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff; /* 悬停时链接变为白色 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header>
+        fyaxm的博客
+    </header>
+
+    <!-- 主体部分 -->
+    <main>
+        <h1>文章列表</h1>
+        <div class="content">
+            <ul class="link-list">
+                <!-- 示例多条记录 -->
+                <li><a href="./refs/infty_compare.html">实数与平面点集的基数比较</a></li>
+                <li><a href="./pointnet/pointnet-Interpretion.html">论文带读：PointNet</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        © 2024 fyaxm. 保留所有权利。 | <a href="#">关于我们</a>
+    </footer>
+</body>
+</html>
