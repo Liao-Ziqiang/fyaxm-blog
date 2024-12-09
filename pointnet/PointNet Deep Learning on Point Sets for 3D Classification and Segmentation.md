@@ -938,13 +938,13 @@ $$
 
 --------
 
-|       Transform        | Accuracy |
-| :--------------------: | :------: |
-|          none          |   87.1   |
-|      input (3x3)       |   87.9   |
-|    feature (64x64)     |   86.9   |
-| feature (64x64) + reg. |   87.4   |
-|        **both**        | **89.2** |
+|            Transform            | Accuracy |
+| :-----------------------------: | :------: |
+|              none               |   87.1   |
+|      input ($3 \times 3$)       |   87.9   |
+|    feature ($64 \times 64$)     |   86.9   |
+| feature ($64 \times 64$) + reg. |   87.4   |
+|            **both**             | **89.2** |
 
 **Table 5: Effects of input feature transforms**. Metric is overall classification accuracy on the ModelNet40 test set.
 
