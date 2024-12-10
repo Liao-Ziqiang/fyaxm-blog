@@ -16,7 +16,7 @@ The primary motivation for writing this article is simple: first, to help myself
 
 This article is intended for readers who wish to understand the principles behind PointNet, especially those just starting their research journey. If you only want to use PointNet, I recommend directly learning about the PointNet++ architecture instead and skipping the underlying principles. Of course, I will also release a guided reading of the PointNet++ paper later.
 
-For a better reading experience, you can visit [this webpage](https://liao-ziqiang.github.io/fyaxm-blog/pointnet/pointnet-Interpretion.html). Don’t forget to leave a like and save the page before you leave! You can also find the original files in the corresponding [GitHub repository](https://github.com/Liao-Ziqiang/fyaxm-blog).
+For a better reading experience, you can visit [this webpage](https://liao-ziqiang.github.io/fyaxm-blog/pointnet/pointnet-Interpretion-en.html). Don’t forget to leave a like and save the page before you leave! You can also find the original files in the corresponding [GitHub repository](https://github.com/Liao-Ziqiang/fyaxm-blog).
 
 This article assumes that readers have a basic understanding of point clouds and other common 3D representations, including their principles, characteristics, and operations. Readers unfamiliar with these topics may refer to related introductory articles. Now, let’s proceed with a paragraph-by-paragraph translation and detailed explanation of the original paper.
 
