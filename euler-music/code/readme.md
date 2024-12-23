@@ -19,3 +19,11 @@
 #### euler_scale_generate.py
 
 使用欧拉给出的公式生成音阶，输入$a, b, c, d$作为参数，默认只需要输入$a, b$
+
+#### euler_scale_table.py
+
+将音阶和十二平均律进行对比
+
+#### euler_scale_visualize.py
+
+可视化各种生成音阶和十二平均律音阶的对比图，横轴经过$\text{log}$映射

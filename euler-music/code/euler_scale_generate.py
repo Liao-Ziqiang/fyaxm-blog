@@ -69,6 +69,8 @@ def generate_scale(a, b, c = 0, d = 0):
 
 
 if __name__ == '__main__':
-    generate_scale(1, 1)
-    generate_scale(4, 1)
-    generate_scale(2, 2, 1)
+    generate_scale(3, 1)
+    generate_scale(2, 2)
+    generate_scale(3, 2)
+    generate_scale(2, 3)
+    generate_scale(3, 3)
