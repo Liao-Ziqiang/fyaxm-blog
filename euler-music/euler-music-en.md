@@ -24,7 +24,7 @@ As a mere enthusiast with limited knowledge of both music and mathematics, I can
 
 ### 2. Overview of the Book
 
-Although this article focuses on just a few simple and intriguing aspects of the book, given the near-total absence of Chinese-language introductions to it, I will first provide a general overview of the book’s structure. The table of contents of the Latin original is as follows (page numbers correspond to the Latin edition):
+Although this article focuses on just a few simple and intriguing aspects of the book, given the near-total absence of introductions to it, I will first provide a general overview of the book’s structure. The table of contents of the Latin original is as follows (page numbers correspond to the Latin edition):
 
 -------------
 
