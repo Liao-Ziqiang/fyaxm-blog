@@ -104,40 +104,48 @@ Let us consider two examples:
 
 This algorithm can be implemented in Python, but we won’t demonstrate it here. Interested readers can download the code from the [GitHub repository](https://github.com/Liao-Ziqiang/fyaxm-blog/tree/main/euler-music/code) and run it themselves for verification.
 
-##### 3.1.1 Least Common Multiple and Dissonance
+##### 3.1.1 Hypothesis: The Physical Principles Behind Euler's Disharmony Formula
 
-We already know that simpler ratios tend to sound more harmonious. But how can we quantify this "simplicity"? Assume the ratio is expressed in its simplest, irreducible form. Intuitively, we might think the sum of the numerator and denominator reflects its complexity. For example, for the ratio $1/2$, the sum of the numerator and denominator is $1+2=3$; for $1/3$, it is $1+3=4$; and for $9/11$, it is $9+11=20$. Clearly, the more complex the ratio, the higher the sum of the numerator and denominator. Alternatively, one could use the product of the numerator and denominator instead of their sum.
+It is already known that the simpler the ratio, the more harmonious it sounds. But how can we quantify this "degree of simplicity"? Let us assume that the ratio is already in its simplest form with the numerator and denominator being coprime. For example, we might intuitively think that the sum of the numerator and denominator reflects the complexity of the ratio. For instance, the sum of the numerator and denominator for $1/2$ is $1+2=3$, for $1/3$ it is $1+3=4$, and for $9/11$ it is $9+11=20$. Clearly, the more complex the ratio, the higher this sum. Similarly, one could use the product of the numerator and denominator instead of their sum. However, such simple methods are unlikely to satisfy us.
 
-However, Euler introduced a different metric with greater extensibility and physical significance: the **least common multiple (LCM)**. The first advantage of this method is that it not only applies to the frequency ratio of two notes but can also be easily extended to multiple notes. Moreover, it is closely related to the physical nature of sound. Here’s a possibly imperfect analogy: sound is essentially the vibration of waves. Suppose the frequency ratio of two notes is $2:3$. This can be likened to two balls bouncing: the first ball bounces every 3 seconds, and the second bounces every 2 seconds (note that the period is inversely related to the frequency). When will they land together? The answer is after 6 seconds, which is the least common multiple of their frequencies. Thus, the **LCM quantitatively describes the length of time it takes for the waveforms of multiple notes to “align”**. To make this concept more intuitive, we can refine the image Euler provided in his book:
+Euler, on the other hand, calculated a different metric with greater extensibility and physical significance: the **Least Common Multiple (LCM)**. The first advantage of this approach lies in its applicability not only to the frequency ratios of two tones but also to those of multiple tones. Then, **prime factorization** is performed, and calculations are based on the number of prime factors. But why use the least common multiple and prime factorization? I hypothesize that this is primarily related to the "misalignment degree" of sound waves. When sound waves misalign, irregular "spikes" or zero points may occur, which could be the source of dissonance. Additionally, it may relate to the overlap of harmonics. For two sound waves with a frequency ratio of $a:b$, the harmonics proportional to $\text{LCM}(a,b)$ overlap. The more harmonic overlap, the more harmonious the interval might sound. In summary: if the periodicity of two tones’ frequencies takes a long time to "align" or "overlap," interference, beats, or complex transitions will occur more frequently within a shorter time frame. A higher number of prime factors or larger prime factors may correspond to more intense disturbances, requiring longer periods to "synchronize" or "align." Of course, these are just simple hypotheses. In fact, Euler's formula is also considered problematic from today’s perspective.
 
 <img src="img/freq.jpg" alt="freq" style="zoom: 36%;" />
 
-A more complex example is $4:5:6$, where the least common multiple is $60$, meaning the waveforms of these three notes align only once every 60 time units. The principle might be the following: during this period, the phases of the sound waves are mostly misaligned, with varying degrees of misalignment in different intervals. As a result, within these 60 time units, the waveform of the combined sound is complex and irregular, producing a composite waveform that appears intricate. In fact, for the composite waveform function, this 60 corresponds to its period (which is proportional to the period; the exact value requires frequency calculations).
+##### 3.1.2 Limitations of Euler's Disharmony Formula
 
-##### 3.1.2 Prime Factorization and Dissonance
+People's understanding of the harmony of chords, or the harshness of any sound, has been gradual. Initially, people measured harmony solely based on the simplicity of integer ratios. Early scholars often explained this phenomenon through the idea that "sound waves are easier to synchronize and superimpose in the time or spatial domain." However, this is a rather crude understanding. Later studies, such as resonance theory, auditory physiology, and the psychoacoustic experiments of the 20th century, revealed that dissonance is related to factors such as beats, overlapping frequency bands on the basilar membrane in the inner ear, auditory masking, and "mutual interference" between harmonics.
 
-So, does the least common multiple allow us to measure the dissonance of a chord? The answer is no. Euler argued that prime factorization is also required (perhaps a reader more familiar with acoustics can provide a physical explanation for this). The prime factorization of a number reveals its fundamental building blocks. Primes can be seen as the "basic units" of integers, and their unique combinations construct all integers. Therefore, prime factorization provides a clear depiction of a number's complexity. Furthermore, Euler believed that smaller prime factors are simpler, which is why the summation term **$\sum_{k=1}^r a_k(p_k - 1)$** in the formula is weighted by the prime factor itself. This ensures that larger prime factors significantly increase the score. Essentially, this approach applies a weighted treatment to the prime factorization of the least common multiple. Overall, dissonance depends on two aspects: the number of prime factors and the magnitude of those prime factors.
+In modern auditory science, one of the most common and foundational metrics for quantifying "dissonance" is **roughness caused by beating frequencies**. When two or more frequencies that are close but not identical sound simultaneously, periodic interweaving or interference occurs within the cochlea, producing beats. Beat frequencies within a certain range (approximately 20–40 Hz) are often perceived subjectively as "rough" or harsh. Specific quantification methods include the consonance theory proposed by Plomp and Levelt.
+
+In fact, many theories related to vision and hearing require integration with physiology and psychology to be fully explained. For example, human sensitivity to different colors varies (see: Spectral Luminous Efficiency Curve), and human perception of loudness varies with frequency (see: Equal Loudness Contours). The shapes of these curves even show some correlation with region and ethnicity. Therefore, Euler's attempt to describe disharmony using elementary mathematics is indeed quite limited from today’s perspective. Moreover, Euler excluded factors such as timbre and loudness, which reduces the universality of his theory—it can only explain chords and cannot be extended to arbitrary sounds.
+
+Of course, the great Euler was not unaware of this:
+
+> I do not deny (and I will later prove) that through practice and repeated listening, we can indeed gradually come to enjoy pieces of music that initially displeased us, and vice versa. However, this so-called "principle of sufficient reason" is not thereby overturned. For we must not only explore the reasons why we like or dislike something from the object itself but also consider how the senses transmit the image of the object to the mind, while also paying attention to the mind's primary judgment of the presented image. Since these factors may vary between individuals, and even for the same person at different times, it is not surprising that the same thing can please some people while displeasing others.
+> —*Euler*
+
+Perhaps he simply wanted to focus on the main contradiction of the problem and provide a framework that was broadly accurate. Euler has always been renowned for his incredible numerical intuition, and his ability to propose such a concise and highly explanatory formula is truly admirable.
 
 #### 3.2 Visualization of Interval Dissonance
 
 By substituting approximate ratios for various intervals, we can obtain the following table:
 
-|          Name           | Approx. Ratio | Least Common Multiple (n) |    Prime Factorization    | Count E(n) |
-| :---------------------: | :-----------: | :-----------------------: | :-----------------------: | :--------: |
-|  Unison (Perfect 1st)   |      1:1      |             1             |             -             |     1      |
-|   Minor Second (m2nd)   |     16:15     |            240            |  $ 2^4 \cdot 3 \cdot 5 $  |     11     |
-|   Major Second (M2nd)   |      9:8      |            72             |     $ 2^3 \cdot 3^2 $     |     8      |
-|   Minor Third (m3rd)    |      6:5      |            30             |   $ 2 \cdot 3 \cdot 5 $   |     8      |
-|   Major Third (M3rd)    |      5:4      |            20             |      $ 2^2 \cdot 5 $      |     7      |
-|  Perfect Fourth (P4th)  |      4:3      |            12             |      $ 2^2 \cdot 3 $      |     5      |
-|      Tritone (TT)       |     45:32     |           1440            | $ 2^5 \cdot 3^2 \cdot 5 $ |     14     |
-| Diminished Fifth (d5th) |     64:45     |           2880            | $ 2^6 \cdot 3^2 \cdot 5 $ |     15     |
-|  Perfect Fifth (P5th)   |      3:2      |             6             |       $ 2 \cdot 3 $       |     4      |
-|   Minor Sixth (m6th)    |      8:5      |            40             |      $ 2^3 \cdot 5 $      |     8      |
-|   Major Sixth (M6th)    |      5:3      |            15             |       $ 3 \cdot 5 $       |     7      |
-|  Minor Seventh (m7th)   |      9:5      |            45             |      $ 3^2 \cdot 5 $      |     9      |
-|  Major Seventh (M7th)   |     15:8      |            120            |  $ 2^3 \cdot 3 \cdot 5 $  |     10     |
-|  Octave (Perfect 8th)   |      2:1      |             2             |           $ 2 $           |     2      |
+|         Name          | Approx. Ratio | Least Common Multiple (n) |    Prime Factorization    | Count E(n) |
+| :-------------------: | :-----------: | :-----------------------: | :-----------------------: | :--------: |
+| Unison (Perfect 1st)  |      1:1      |             1             |             -             |     1      |
+|  Minor Second (m2nd)  |     16:15     |            240            |  $ 2^4 \cdot 3 \cdot 5 $  |     11     |
+|  Major Second (M2nd)  |      9:8      |            72             |     $ 2^3 \cdot 3^2 $     |     8      |
+|  Minor Third (m3rd)   |      6:5      |            30             |   $ 2 \cdot 3 \cdot 5 $   |     8      |
+|  Major Third (M3rd)   |      5:4      |            20             |      $ 2^2 \cdot 5 $      |     7      |
+| Perfect Fourth (P4th) |      4:3      |            12             |      $ 2^2 \cdot 3 $      |     5      |
+|     Tritone (TT)      |     45:32     |           1440            | $ 2^5 \cdot 3^2 \cdot 5 $ |     14     |
+| Perfect Fifth (P5th)  |      3:2      |             6             |       $ 2 \cdot 3 $       |     4      |
+|  Minor Sixth (m6th)   |      8:5      |            40             |      $ 2^3 \cdot 5 $      |     8      |
+|  Major Sixth (M6th)   |      5:3      |            15             |       $ 3 \cdot 5 $       |     7      |
+| Minor Seventh (m7th)  |     16:9      |            144            |     $ 2^4 \cdot 3^2 $     |     9      |
+| Major Seventh (M7th)  |     15:8      |            120            |  $ 2^3 \cdot 3 \cdot 5 $  |     10     |
+| Octave (Perfect 8th)  |      2:1      |             2             |           $ 2 $           |     2      |
 
 We can visualize this as a heatmap:
 
@@ -296,7 +304,7 @@ The graph (Comparison of Scales) for the case of $a = 3, b = 2$ offers a visuali
 <img src="img/tuning.png" alt="tuning" style="zoom:33%;" />
 
 > Thus, a person with such keen hearing can tune an instrument in the following sequence. First, determine the note F according to the specific circumstances, and use this note as the basis to obtain all other notes marked with the same letter. Next, find the perfect fifth C and the major third A relative to F, from which the rest of the notes marked with the same letters can be determined according to the first rule mentioned earlier. Then, from the note C, derive its perfect fifth G and major third E. The note E is also the perfect fifth of the note A. From A, derive its major third C♯. Then, from G, obtain its perfect fifth D and major third B. From E, derive its major third G♯, which is also the perfect fifth of C♯. Next, from B, derive its perfect fifth F♯ and major third D♯, or alternatively, D♯ can be derived from G♯. Finally, find the perfect fifth of D♯, which is B. Using this method and repeating the octave, the entire instrument can be correctly tuned.  
-
+>
 > This entire tuning process can be better understood with the help of the attached diagram. Since the notes E, B, G♯, F♯, and D♯ can be determined through both perfect fifths and major thirds, this provides significant assistance during the tuning process. If an error occurs, it can be immediately detected and corrected.  
 
 The explanation above is taken directly from Euler's writings and should already be quite clear, so no further elaboration is provided here. In the diagram, the snake-like symbol at the bottom right of C, G, and D represents a sharp (♯).  
@@ -312,3 +320,14 @@ In the remaining chapters, Euler attempts to construct his new musical system. F
 Euler's *Tentamen novae theoriae musicae* (*Attempt at a New Theory of Music*) is an extraordinary book that bridges the realms of mathematics and music. It not only showcases Euler's profound mathematical expertise but also reflects his keen sensitivity to art. Using simple elementary calculations, Euler unified music under the principles of order and beauty—truly breathtaking.  
 
 Euler was a prolific author throughout his life. From what I know, a comprehensive edition of his collected works—finalized after over a century of effort—was published a few years ago. This edition should include this book. I believe it holds many more treasures of wisdom waiting to be discovered by future generations. Of course, we shouldn't expect this "ancient scroll" to completely overturn or revolutionize the current system. The integration of music theory and mathematics has long been a mature field, and both music and mathematics have made significant progress since Euler's time. Today, for example, we can describe musical phenomena with much greater precision, such as using group theory to analyze scales. Nevertheless, discovering fragments of ancient thought and experiencing the wisdom of our predecessors is both exciting and meaningful, isn't it?
+
+### Reference
+
+```
+[1] Sándor26, J. (2009). Euler and music. A forgotten arithmetic function by Euler. Gao Mingzhe Some new Hilbert type inequalities and applications....... 4 Song-Zhimin, Dou-Xiangkai and Yin Li On some new inequalities for the Gamma function....... 14 Mihály Bencze, 17(1), 265-271.
+[2] Pesic, P. (2013). Euler's Musical Mathematics. Mathematical Intelligencer, 35(2).
+[3] Archibald, R. C. (1924). Mathematicians and music. The American Mathematical Monthly, 31(1), 1-25.
+[4] Euler, L. (1739). Tentamen novae theoriae musicae: Ex certissimis harmoniae principiis dilucide exposita. Petropoli: Ex Typographia Academiae Scientiarum.
+[5] Plomp, R., & Levelt, W. J. (1965). Tonal consonance and critical bandwidth. Journal of the Acoustical Society of America, 38, 548-560.
+```
+
