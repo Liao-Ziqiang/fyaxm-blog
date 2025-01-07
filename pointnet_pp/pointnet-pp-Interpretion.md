@@ -138,7 +138,7 @@ PointNet++ 的设计需要解决两个问题：如何生成点集的划分，以
 
 > Given an unordered point set $\{x_1,x_2,\ldots,x_n\}$ with $x_i \in \mathbb{R}^d$, one can define a set function $f:\mathcal{X} \to \mathbb{R}$ that maps a set of points to a vector:
 > $$
-> f\left( {{x_1},{x_2}, \ldots ,{x_n}} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\ \quad \quad (1)
+> f\left( {x_1,x_2, \ldots ,x_n} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {x_i} \right)} \right\}} \right)\ \quad \quad (1)
 > $$
 > where $\gamma$ and $h$ are usually multi-layer perceptron (MLP) networks.
 >
@@ -148,7 +148,7 @@ PointNet++ 的设计需要解决两个问题：如何生成点集的划分，以
 
 给定一个无序点集 $\{x_1,x_2,\ldots,x_n\}$，其中 $x_i \in \mathbb{R}^d$，可以定义一个集合函数 $f:\mathcal{X} \to \mathbb{R}$，将一组点映射为一个向量：
 $$
-f\left( {{x_1},{x_2}, \ldots ,{x_n}} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\ \quad \quad (1)
+f\left( {x_1,x_2, \ldots ,x_n} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( x_i \right)} \right\}} \right)\ \quad \quad (1)
 $$
 其中 $\gamma$ 和 $h$ 通常是多层感知机（MLP）网络。
 
@@ -346,7 +346,7 @@ $$
 
 - 第11\~19行：这部分对应MLP模块（$h$ 函数），即特征提取模块。`new_points`被逐层更新，最终输出时更新为各点对应的向量。同一层级下，所有分组使用的参数是共享的。读者可以回顾下这个公式：
   $$
-  \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\
+  \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {x_i} \right)} \right\}} \right)\
   $$
 
 - 第19\~27行：这部分对应$\rm MAX$函数，即对称函数部分。其中默认使用的是`pooling='max'`，即最大池化（翻译为池化可能产生误导，因为它和常见的CNN中的池化层不太一样。我一直认为Pooling这里翻译为“聚合”更合适）。这里四个模式都是对称的，`max_and_avg`模式其实就是把最大池化和平均池化产生的向量进行拼接。`weighted_avg`则是一种加权平均，它根据点到采样点（中心点）的距离进行加权，计算邻域点特征的加权平均值。根据PointNet的实验，使用`max`效果最佳，因为它相当于提取关键点集。

@@ -118,7 +118,7 @@ Our work can be viewed as an extension of PointNet [20] with added hierarchical 
 
 Given an unordered point set $\{x_1,x_2,\ldots,x_n\}$ with $x_i \in \mathbb{R}^d$, one can define a set function $f:\mathcal{X} \to \mathbb{R}$ that maps a set of points to a vector:
 $$
-f\left( {{x_1},{x_2}, \ldots ,{x_n}} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\ \quad \quad (1)
+f\left( {x_1,x_2, \ldots ,x_n} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\ \quad \quad (1)
 $$
 where $\gamma$ and $h$ are usually multi-layer perceptron (MLP) networks.
 
@@ -288,7 +288,7 @@ where $\hat{x}$ is the coordinate of the centroid. We use PointNet [20] as descr
 
 - Lines 11 to 19: This part corresponds to the MLP module ($h$ function), namely the feature extraction module. `new_points` is updated layer by layer, and finally outputs the vector corresponding to each point. Parameters used by all groups at the same level are shared. Refer to this formula:
   $$
-  \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\
+  \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {x_i} \right)} \right\}} \right)\
   $$
 
 - Lines 19 to 27: This part corresponds to the $\rm MAX$ function, the symmetric function part. The default is `pooling='max'`, i.e., max pooling (translating it as pooling may mislead since it is different from the common pooling layers in CNNs. I always think translating Pooling as "aggregation" is more appropriate). All four modes here are symmetric. The `max_and_avg` mode concatenates vectors produced by max pooling and average pooling. `weighted_avg` is a weighted average based on the distance of points from the sampling point (center point) to compute a weighted average of neighborhood point features. According to PointNet's experiments, using `max` yields the best performance as it essentially extracts key points.

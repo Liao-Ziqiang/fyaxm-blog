@@ -140,7 +140,7 @@ PointNet++の設計には二つの問題を解決する必要があります：�
 
 > Given an unordered point set $\{x_1,x_2,\ldots,x_n\}$ with $x_i \in \mathbb{R}^d$, one can define a set function $f:\mathcal{X} \to \mathbb{R}$ that maps a set of points to a vector:
 > $$
-> f\left( {{x_1},{x_2}, \ldots ,{x_n}} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\ \quad \quad (1)
+> f\left( {x_1,x_2, \ldots ,x_n} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {x_i} \right)} \right\}} \right)\ \quad \quad (1)
 > $$
 > where $\gamma$ and $h$ are usually multi-layer perceptron (MLP) networks.
 >
@@ -150,7 +150,7 @@ PointNet++の設計には二つの問題を解決する必要があります：�
 
 無作為の点集合 $\{x_1,x_2,\ldots,x_n\}$ が与えられ、ここで $x_i \in \mathbb{R}^d$、集合関数 $f:\mathcal{X} \to \mathbb{R}$ を定義できます。この関数は一組の点をベクトルにマッピングします：
 $$
-f\left( {{x_1},{x_2}, \ldots ,{x_n}} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {{x_i}} \right)} \right\}} \right)\ \quad \quad (1)
+f\left( {x_1,x_2, \ldots ,x_n} \right) = \gamma \left( {\mathop {{\mathop{\rm MAX}\nolimits} }\limits_{i = 1, \ldots ,n} \left\{ {h\left( {x_i} \right)} \right\}} \right)\ \quad \quad (1)
 $$
 ここで、$\gamma$ と $h$ は通常、多層パーセプトロン (MLP) ネットワークです。
 
