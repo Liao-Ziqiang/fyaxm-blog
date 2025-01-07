@@ -2,6 +2,8 @@
 
 [TOC]
 
+> **Attention**: This article was originally written in Chinese and published on [this website](https://blog.csdn.net/liaoziqiang/article/details/144675266). The English version was translated using GPT-4o. Apologies, as I am not a professional columnist and did not have enough time to personally translate or thoroughly proofread the content. I hope this does not affect your reading experience. If you notice any language or content errors, or have any suggestions for improvement, feel free to contact me at [liaoziqiang7@gmail.com](mailto:liaoziqiang7@gmail.com).
+
 ### 1. Introduction
 
 Anyone interested in mathematics has undoubtedly heard of the renowned name—Leonhard Euler. Celebrated as a legendary figure, Euler is known for deriving the divine formula $e^{i\pi} + 1 = 0$ and is recognized as one of the greatest mathematicians of all time. His contributions span almost every domain of mathematics, as well as physics, engineering, and economics. Euler's name is associated with numerous formulas across different subjects.
